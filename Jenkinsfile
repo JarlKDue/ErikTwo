@@ -56,7 +56,7 @@ pipeline {
         }
         stage('Run Docker Image'){
             steps{
-                sh "docker run --name gatling-test-container -p 8088:8080 ${dockerImage}"
+                sh "docker run --name gatling-test-container -d -p 8088:8080 ${dockerImage}"
             }
         }
         stage('Load Test of Application'){
